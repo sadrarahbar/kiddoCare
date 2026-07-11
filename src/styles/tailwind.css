@@ -1,4 +1,123 @@
 @import 'tailwindcss' source(none);
 @source '../**/*.{js,ts,jsx,tsx}';
+@source '../../src/app/**/*.{js,ts,jsx,tsx}';
 
 @import 'tw-animate-css';
+
+@layer components {
+  .container-custom {
+    --container-gutter-x: 1.5rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: calc(var(--container-gutter-x) * 0.5);
+    padding-left: calc(var(--container-gutter-x) * 0.5);
+  }
+
+  @media (min-width: 576px) {
+    .container-custom {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container-custom {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container-custom {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container-custom {
+      max-width: 1140px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .container-custom {
+      max-width: 1320px;
+    }
+  }
+}
+
+.hero{
+  background-image: url('/images/heroBackground.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.provider{
+  background-image: url('/images/providerBackground.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.info{
+  background-image: url('/images/infoBackground.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.mobileMenu{
+    background-image: url('/images/infoBackground.svg');
+  background-size: cover;
+  background-position: left center;
+}
+
+.whyKiddo{
+  background-image: url('/images/whyKiddoBackground.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.footer{
+  background-image: url('/images/footerBackground.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.separator{
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.separator--header{
+  height: 17px;
+  background-image: url('/images/separatorHeader.svg');
+}
+
+.separator--hero{
+  height: 57px;
+  background-image: url('/images/separatorHero.svg');
+}
+
+.separator--services{
+  height: 28px;
+  background-image: url('/images/separatorServices.svg');
+}
+
+.separator--provider{
+  height: 28px;
+  background-image: url('/images/separatorProvider.svg');
+}
+
+.separator--whyKiddo{
+  height: 33px;
+  background-image: url('/images/separatorWhyKiddo.svg');
+}
+
+.separator--healthEcosystem{
+  height: 32px;
+  background-image: url('/images/separatorHealthEcosystem.svg');
+}
+
+.separator--FAQ{
+  height: 32px;
+  background-image: url('/images/separatorFAQ.svg');
+}

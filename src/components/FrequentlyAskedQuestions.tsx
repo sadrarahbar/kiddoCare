@@ -1,172 +1,137 @@
-import { useState } from "react";
-import svgPaths from "@/imports/Final-1/svg-30j3xpnyjl";
+"use client";
 
-const faqData = {
-  title: "Frequently Asked Questions",
-  subtitle: "Clear answers for families, clinics, providers, and care teams.",
-  questions: [
+import { useState } from "react";
+import { Button } from "@/app/components/ui/button";
+
+export default function FrequentlyAskedQuestions() {
+  const [openIndex, setOpenIndex] = useState(0);
+  const questions = [
     {
       question: "What is KiddoCare?",
       answer:
         "KiddoCare is a pediatric health platform that connects child health records, family engagement, clinical workflows, and care team collaboration in one secure experience.",
-      open: true,
     },
     {
       question: "Is KiddoCare designed for families or clinics?",
-      answer: "",
-      open: false,
+      answer: "KiddoCare is a pediatric health platform that connects child health records, family engagement, clinical workflows, and care team collaboration in one secure experience."
     },
     {
       question: "How does KiddoCare help clinics and providers?",
-      answer: "",
-      open: false,
+      answer: "KiddoCare is a pediatric health platform that connects child health records, family engagement, clinical workflows, and care team collaboration in one secure experience."
     },
     {
       question: "Does KiddoCare support secure health data sharing?",
-      answer: "",
-      open: false,
+      answer: "KiddoCare is a pediatric health platform that connects child health records, family engagement, clinical workflows, and care team collaboration in one secure experience."
     },
     {
       question: "Can KiddoCare help reduce administrative workload?",
-      answer: "",
-      open: false,
+      answer: "KiddoCare is a pediatric health platform that connects child health records, family engagement, clinical workflows, and care team collaboration in one secure experience."
     },
     {
       question: "How can clinics and providers get started?",
-      answer: "",
-      open: false,
+      answer: "KiddoCare is a pediatric health platform that connects child health records, family engagement, clinical workflows, and care team collaboration in one secure experience."
     },
-  ],
-  cta: {
-    heading: "Ready to bring connected pediatric care to your clinic?",
-    subtext: "Let's explore how KiddoCare can support your families, providers, and care teams.",
-    primaryBtn: "Request a Demo",
-    secondaryBtn: "Contact Us",
-  },
-};
-
-function MinusIcon() {
-  return (
-    <div className="h-[16px] relative shrink-0 w-[14px]">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14 16">
-        <path d={svgPaths.pd4a8f00} fill="#0B283B" />
-      </svg>
-    </div>
-  );
-}
-
-function PlusIcon() {
-  return (
-    <div className="h-[16px] relative shrink-0 w-[14px]">
-      <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14 16">
-        <path d={svgPaths.p2cd26500} fill="#0B283B" />
-      </svg>
-    </div>
-  );
-}
-
-export default function FrequentlyAskedQuestions() {
-  const [openIndex, setOpenIndex] = useState(0);
+  ];
 
   return (
-    <div className="bg-white content-stretch flex flex-col items-center py-[128px] relative shrink-0 w-full z-[4]">
+    <section id="faq" className="relative z-[4] w-full bg-white py-[96px] md:py-[128px]">
       {/* Header */}
-      <div className="content-stretch flex flex-col gap-[16px] h-[205px] items-center justify-center px-[32px] relative shrink-0 w-full max-w-[1280px]">
-        <p className="font-['Inter',sans-serif] font-bold leading-[48px] not-italic relative shrink-0 text-[#0b283b] text-[48px] text-center tracking-[-1.2px] whitespace-nowrap w-full">
-          {faqData.title}
+      <div className="container-custom flex flex-col items-center gap-[16px] text-center">
+        <p className="w-full text-[40px] font-bold leading-[48px] tracking-[-1.2px] text-[#0b283b] md:text-[48px]">
+          Frequently Asked Questions
         </p>
-        <p className="font-['Inter',sans-serif] font-normal leading-[32.5px] not-italic relative shrink-0 text-[#1a5780] text-[20px] text-center w-full">
-          {faqData.subtitle}
+        <p className="w-full text-[20px] font-normal leading-[32.5px] text-[#1a5780]">
+          Clear answers for families, clinics, providers, and care teams.
         </p>
       </div>
 
       {/* Questions */}
-      <div className="content-stretch flex flex-col gap-[16px] items-start px-[32px] relative shrink-0 w-full max-w-[1280px] mt-[64px]">
-        {faqData.questions.map((faq, i) => {
-          const isOpen = i === openIndex;
-          return (
-            <div key={i} className="relative shrink-0 w-full">
-              {isOpen && faq.answer ? (
-                <div className="bg-[rgba(184,227,255,0.5)] relative rounded-[16px] shrink-0 w-full">
-                  <div aria-hidden className="absolute border border-[#1a5780] border-solid inset-0 pointer-events-none rounded-[16px]" />
-                  <div className="content-stretch flex flex-col gap-[24px] items-start p-[32px] relative size-full">
-                    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-                      <p className="font-['Inter',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[#0b283b] text-[20px] tracking-[-0.0195px] whitespace-nowrap">
-                        {faq.question}
-                      </p>
-                      <button
-                        onClick={() => setOpenIndex(-1)}
-                        className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex items-center justify-center relative rounded-[9999px] shrink-0 size-[40px]"
-                      >
-                        <MinusIcon />
-                      </button>
+      <div className="container-custom">
+        <div className=" mt-[16px] md:mt-[64px] flex flex-col gap-[16px] px-5 md:px-0">
+          {questions.map((faq, i) => {
+            const isOpen = i === openIndex;
+            return (
+              <div
+                key={faq.question}
+                className={`
+                w-full rounded-[16px] p-[24px] transition-colors duration-300 md:p-[32px]
+                ${isOpen && faq.answer ? "border border-[#1a5780] bg-[rgba(184,227,255,0.5)]" : "border-[0.5px] border-[#b8e3ff] bg-[rgba(184,227,255,0.05)]"}
+              `}
+              >
+                <div className="flex w-full items-center justify-between gap-[16px]">
+                  <p className="text-[20px] font-semibold leading-[28px] tracking-[-0.0195px] text-[#0b283b]">
+                    {faq.question}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                    className={`
+                    flex cursor-pointer size-[40px] shrink-0 items-center justify-center rounded-full bg-white
+                    ${isOpen && faq.answer ? "drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)]" : "border border-[#B8E3FF]"}
+                  `}
+                  >
+                    <div className="relative h-[16px] w-[14px] shrink-0 transition-transform duration-300">
+                      {isOpen && faq.answer ?
+                        (<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.4284 8C15.4284 8.55313 14.9177 9 14.2856 9H1.71415C1.082 9 0.571289 8.55313 0.571289 8C0.571289 7.44687 1.082 7 1.71415 7H14.2856C14.9177 7 15.4284 7.44687 15.4284 8Z" fill="#0B283B" />
+                        </svg>
+                        )
+                        :
+                        (<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.14272 2.5C9.14272 1.94687 8.632 1.5 7.99986 1.5C7.36772 1.5 6.857 1.94687 6.857 2.5V7H1.71415C1.082 7 0.571289 7.44687 0.571289 8C0.571289 8.55313 1.082 9 1.71415 9H6.857V13.5C6.857 14.0531 7.36772 14.5 7.99986 14.5C8.632 14.5 9.14272 14.0531 9.14272 13.5V9H14.2856C14.9177 9 15.4284 8.55313 15.4284 8C15.4284 7.44687 14.9177 7 14.2856 7H9.14272V2.5Z" fill="#0B283B" />
+                        </svg>
+                        )
+                      }
                     </div>
-                    <p className="font-['Inter',sans-serif] font-normal leading-[26px] not-italic relative shrink-0 text-[#072033] text-[18px] w-full">
+                  </button>
+                </div>
+                <div
+                  className={`
+                  grid transition-[grid-template-rows,opacity,margin-top] duration-300 ease-in-out
+                  ${isOpen && faq.answer ? "mt-[24px] grid-rows-[1fr] opacity-100" : "mt-0 grid-rows-[0fr] opacity-0"}
+                `}
+                >
+                  <div className="overflow-hidden">
+                    <p className="w-full text-[18px] font-normal leading-[26px] text-[#072033]">
                       {faq.answer}
                     </p>
                   </div>
                 </div>
-              ) : (
-                <div className="bg-white h-[104px] relative rounded-[12px] shrink-0 w-full">
-                  <div aria-hidden className="absolute border-[#b8e3ff] border-[0.5px] border-solid inset-0 pointer-events-none rounded-[12px]" />
-                  <div className="flex flex-col items-center justify-center size-full">
-                    <div className="content-stretch flex flex-col isolate items-center justify-center p-[32px] relative size-full">
-                      <div className="content-stretch flex items-center justify-between relative shrink-0 w-full z-[1]">
-                        <p className="font-['Inter',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[#0b283b] text-[20px] tracking-[-0.0195px] whitespace-nowrap">
-                          {faq.question}
-                        </p>
-                        <button
-                          onClick={() => setOpenIndex(i)}
-                          className="bg-white content-stretch drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex items-center justify-center relative rounded-[9999px] shrink-0 size-[40px]"
-                        >
-                          <div aria-hidden className="absolute border border-[#b8e3ff] border-solid inset-0 pointer-events-none rounded-[9999px]" />
-                          <PlusIcon />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      {/* CTA Box */}
-      <div className="content-stretch flex flex-col items-start pt-[32px] relative shrink-0 w-full max-w-[1280px]">
-        <div className="content-stretch flex flex-col items-start px-[32px] relative shrink-0 w-full">
-          <div className="bg-[#072033] relative rounded-[32px] shrink-0 w-full">
-            <div className="overflow-clip rounded-[inherit] size-full">
-              <div className="content-stretch flex flex-col items-start p-[48px] relative size-full">
-                <div className="absolute bg-[rgba(59,130,246,0.1)] blur-[32px] left-[-40px] rounded-[9999px] size-[395px] top-[-150.19px]" />
-                <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-                  <div className="content-stretch flex flex-col gap-[16px] items-start max-w-[576px] min-w-[576px] relative shrink-0 w-[576px]">
-                    <p className="font-['Inter',sans-serif] font-bold leading-[36px] not-italic relative shrink-0 text-[30px] text-white tracking-[-0.0293px] w-full whitespace-pre-wrap">
-                      {faqData.cta.heading}
-                    </p>
-                    <p className="font-['Inter',sans-serif] font-normal leading-[28px] not-italic relative shrink-0 text-[#94c8f3] text-[18px] tracking-[-0.0352px] w-full">
-                      {faqData.cta.subtext}
-                    </p>
-                  </div>
-                  <div className="content-stretch flex gap-[16.01px] items-start relative shrink-0">
-                    <div className="bg-white content-stretch flex flex-col h-[60px] items-center justify-center px-[32px] py-[17px] relative rounded-[12px] shrink-0">
-                      <p className="font-['Inter',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#0b283b] text-[18px] text-center tracking-[-0.0703px] whitespace-nowrap">
-                        {faqData.cta.primaryBtn}
-                      </p>
-                    </div>
-                    <div className="content-stretch flex flex-col h-[60px] items-center justify-center px-[32px] py-[16px] relative rounded-[12px] shrink-0">
-                      <div aria-hidden className="absolute border border-[#94c8f3] border-solid inset-0 pointer-events-none rounded-[12px]" />
-                      <p className="font-['Inter',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#94c8f3] text-[18px] text-center tracking-[0.0352px] whitespace-nowrap">
-                        {faqData.cta.secondaryBtn}
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
-    </div>
+      {/* CTA Box */}
+      <div className="container-custom pt-[32px]">
+        <div className=" px-5 md:px-0">
+          <div className="relative overflow-hidden rounded-[32px] bg-[#072033] p-[32px] md:p-[48px]">
+
+            {/* Shadow */}
+            <div className="absolute left-[-40px] top-[-150.19px] size-[395px] rounded-full bg-[rgba(59,130,246,0.1)] blur-[32px]" />
+
+            {/* Content */}
+            <div className="relative flex flex-col lg:flex-row items-start justify-between gap-[32px] lg:items-center">
+              <div className="flex lg:max-w-[600px] flex-col gap-[16px]">
+                <p className="w-full text-[30px] font-bold leading-[36px] tracking-[-0.0293px] text-white">
+                  Ready to bring connected pediatric care to your clinic?
+                </p>
+                <p className="w-full text-[18px] font-normal leading-[28px] tracking-[-0.0352px] text-[#94c8f3]">
+                  Let's explore how KiddoCare can support your families, providers, and care teams.
+                </p>
+              </div>
+              <div className="flex w-full flex-col gap-[16px] sm:flex-row lg:w-auto">
+                <Button size="auto" className="flex-1 h-[60px] bg-white px-[32px] py-[17px] text-[18px] font-bold leading-[24px] tracking-[-0.0703px] text-[#0b283b] hover:bg-[#eef8ff]">
+                  Request a Demo
+                </Button>
+                <Button size="auto" className="flex-1 h-[60px] border border-[#94c8f3] bg-transparent px-[32px] py-[16px] text-[18px] font-bold leading-[24px] tracking-[0.0352px] text-[#94c8f3] hover:bg-white/10">
+                  Contact Us
+                </Button>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </section>
   );
 }
