@@ -44,9 +44,9 @@ export default function WhyKiddoCare() {
       <div className="container-custom relative flex flex-col gap-[32px] md:gap-[64px]">
         {/* Heading */}
         <div className="flex w-full flex-col items-center gap-[16px] text-center">
-          <p className="w-full text-[40px] font-bold leading-[44px] tracking-[-0.5px] text-[#0b283b] md:text-[48px]">
+          <h2 className="w-full text-[40px] font-bold leading-[44px] tracking-[-0.5px] text-[#0b283b] md:text-[48px]">
             Why KiddoCare?
-          </p>
+          </h2>
           <p className="w-full text-[20px] font-medium leading-[28px] tracking-[-0.5px] text-[#1a5780]">
             Built for connected pediatric care.
           </p>
@@ -63,9 +63,9 @@ export default function WhyKiddoCare() {
                   alt={item.icon.alt}
                 />
                 <div className="flex flex-col gap-2">
-                  <p className="w-full text-[24px] font-normal text-[#0b283b]">
+                  <h3 className="w-full text-[24px] font-normal text-[#0b283b]">
                     {item.title}
-                  </p>
+                  </h3>
                   <p className="w-full text-[16px] font-normal text-[#1d5f8b]">
                     {item.description}
                   </p>

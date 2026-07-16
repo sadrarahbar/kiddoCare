@@ -34,9 +34,9 @@ export default function OurFoundingTeam() {
       <div className="container-custom flex flex-col gap-[48px]">
         {/* Heading */}
         <div className="flex w-full flex-col items-center gap-[16px] text-center">
-          <p className="w-full text-[36px] font-bold leading-[40px] tracking-[-0.5px] text-[#0b283b]">
+          <h2 className="w-full text-[36px] font-bold leading-[40px] tracking-[-0.5px] text-[#0b283b]">
             Our Founding Team
-          </p>
+          </h2>
           <p className="w-full text-[20px] font-medium leading-[28px] tracking-[-0.5px] text-[#1a5780]">
             Meet the experts behind our KiddoCare platform
           </p>

@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "KiddoCare",
   title: {
-    default: "KiddoCare | Connected Pediatric Care Platform",
+    default: "KiddoCare | Canadian Pediatric Health SaaS Platform",
     template: "%s | KiddoCare",
   },
   description:
-    "KiddoCare is a Canadian pediatric healthcare SaaS platform connecting families, clinics, providers, and care teams across every child's health journey.",
+    "KiddoCare is the pediatric healthcare SaaS platform that connects families, clinics, and care teams, bringing every part of a child's health journey together.",
   keywords: [
     "KiddoCare",
-    "pediatric healthcare SaaS",
+    "pediatric healthcare SaaS platform",
     "child health records",
     "family health app",
     "clinic workflow software",
-    "connected pediatric care",
+    "connected care",
   ],
   alternates: {
     canonical: "/",
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "KiddoCare",
-    title: "KiddoCare | Connected Pediatric Care Platform",
+    title: "KiddoCare | Canadian Pediatric Health SaaS Platform",
     description:
-      "A pediatric healthcare SaaS platform that connects families, clinics, providers, and care teams in one secure experience.",
+      "KiddoCare is the pediatric healthcare SaaS platform that connects families, clinics, and care teams, bringing every part of a child's health journey together.",
     locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
-    title: "KiddoCare | Connected Pediatric Care Platform",
+    title: "KiddoCare | Canadian Pediatric Health SaaS Platform",
     description:
-      "Connected pediatric care for families, clinics, providers, and care teams.",
+      "KiddoCare is the pediatric healthcare SaaS platform that connects families, clinics, and care teams, bringing every part of a child's health journey together.",
   },
   robots: {
     index: true,

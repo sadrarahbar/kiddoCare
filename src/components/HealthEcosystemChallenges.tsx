@@ -56,17 +56,10 @@ export default function HealthEcosystemChallenges() {
                 className={`
                   relative rounded-[24px]  max-h-min
                   ${isDark ? "bg-[#072033]" : "bg-white drop-shadow-[0px_8px_15px_rgba(0,0,0,0.04)]"}`}>
-
-                {/* Shadow if dark card */}
-                {isDark && (
-                  <div className="
-                          absolute left-0 right-0 m-auto top-[-147.19px] 
-                          size-[395px] rounded-full 
-                          bg-[rgba(59,130,246,0.1)] blur-[32px]" />
-                )}
+             
 
                 {/* Content */}
-                <div className={`flex flex-col items-center
+                <div className={`relative flex flex-col items-center z-[1]
                         p-[32px] md:p-[40px] ${isDark ? "md:pb-[85px]" : ""}`}>
 
                   {/* Icon */}
@@ -83,14 +76,14 @@ export default function HealthEcosystemChallenges() {
                   </div>
 
                   {/* Title */}
-                  <p className="w-full pb-[24px] text-[24px] font-bold leading-[32px] tracking-[0.0703px]" style={{ color: titleColor }}>
+                  <h3 className="w-full pb-[24px] text-[24px] font-bold leading-[32px] tracking-[0.0703px]" style={{ color: titleColor }}>
                     {card.title}
-                  </p>
+                  </h3>
 
                   {/* List */}
-                  <div className="flex w-full flex-col gap-[16px]">
+                  <ul className="flex w-full flex-col gap-[16px]">
                     {card.items.map((item) => (
-                      <div key={item} className="flex w-full items-start gap-[12px]">
+                      <li key={item} className="flex w-full items-start gap-[12px]">
                         <div className="mt-1 flex items-center justify-center">
                           {card.variant === "dark" ? (
                             <svg width="18" height="18" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,10 +99,18 @@ export default function HealthEcosystemChallenges() {
                         <p className="w-full text-[16px] font-normal leading-[24px]" style={{ color: textColor }}>
                           {item}
                         </p>
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
+
+                 {/* Shadow if dark card */}
+                {isDark && (
+                  <div className="
+                          absolute z-0 left-0 right-0 m-auto top-[-147.19px] 
+                          size-[395px] rounded-full 
+                          bg-[rgba(59,130,246,0.1)] blur-[32px]" />
+                )}
               </div>
             );
           })}

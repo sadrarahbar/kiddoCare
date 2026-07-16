@@ -85,9 +85,9 @@ export default function OurServices() {
     <section id="services" className="relative z-[12] w-full bg-white py-[70px] md:py-[128px]">
       <div className="container-custom flex flex-col gap-[64px]">
         <div className="flex w-full flex-col items-center gap-[16px]">
-          <p className="w-full text-center text-[40px] font-bold leading-[44px] tracking-[-0.5px] text-[#0b283b] md:text-[48px]">
+          <h2 className="w-full text-center text-[40px] font-bold leading-[44px] tracking-[-0.5px] text-[#0b283b] md:text-[48px]">
             Our Services
-          </p>
+          </h2>
           <p className="w-full text-center text-[20px] font-normal leading-[28px] tracking-[-0.5px] text-[#1a5780]">
             A complete end-to-end platform for connected pediatric care.
           </p>
