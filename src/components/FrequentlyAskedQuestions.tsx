@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/app/components/ui/button";
+import { showComingSoon } from "@/lib/show-coming-soon";
 
 export default function FrequentlyAskedQuestions() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -69,8 +70,18 @@ export default function FrequentlyAskedQuestions() {
             return (
               <li
                 key={faq.question}
+                role="button"
+                tabIndex={0}
+                aria-expanded={isOpen}
+                onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setOpenIndex(isOpen ? -1 : i);
+                  }
+                }}
                 className={`
-                w-full rounded-[16px] p-[24px] transition-colors duration-300 md:p-[32px]
+                w-full cursor-pointer rounded-[16px] p-[24px] transition-colors duration-300 md:p-[32px]
                 ${isOpen && faq.answer ? "border border-[#1a5780] bg-[rgba(184,227,255,0.5)]" : "border-[0.5px] border-[#b8e3ff] bg-[rgba(184,227,255,0.05)]"}
               `}
               >
@@ -78,9 +89,8 @@ export default function FrequentlyAskedQuestions() {
                   <h3 className="text-[20px] font-semibold leading-[28px] tracking-[-0.0195px] text-[#0b283b]">
                     {faq.question}
                   </h3>
-                  <button
-                    type="button"
-                    onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                  <span
+                    aria-hidden="true"
                     className={`
                     flex cursor-pointer size-[40px] shrink-0 items-center justify-center rounded-full bg-white
                     ${isOpen && faq.answer ? "drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)]" : "border border-[#B8E3FF]"}
@@ -99,7 +109,7 @@ export default function FrequentlyAskedQuestions() {
                         )
                       }
                     </div>
-                  </button>
+                  </span>
                 </div>
                 <div
                   className={`
@@ -137,10 +147,10 @@ export default function FrequentlyAskedQuestions() {
                 </p>
               </div>
               <div className="flex w-full flex-col gap-[16px] sm:flex-row lg:w-auto">
-                <Button size="auto" className="flex-1 h-[60px] bg-white px-[32px] py-[17px] text-[18px] font-bold leading-[24px] tracking-[-0.0703px] text-[#0b283b] hover:bg-[#eef8ff]">
+                <Button size="auto" onClick={showComingSoon} className="flex-1 h-[60px] bg-white px-[32px] py-[17px] text-[18px] font-bold leading-[24px] tracking-[-0.0703px] text-[#0b283b] hover:bg-[#eef8ff]">
                   Request a Demo
                 </Button>
-                <Button size="auto" className="flex-1 h-[60px] border border-[#94c8f3] bg-transparent px-[32px] py-[16px] text-[18px] font-bold leading-[24px] tracking-[0.0352px] text-[#94c8f3] hover:bg-white/10">
+                <Button size="auto" onClick={showComingSoon} className="flex-1 h-[60px] border border-[#94c8f3] bg-transparent px-[32px] py-[16px] text-[18px] font-bold leading-[24px] tracking-[0.0352px] text-[#94c8f3] hover:bg-white/10">
                   Contact Us
                 </Button>
               </div>

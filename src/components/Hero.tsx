@@ -1,5 +1,8 @@
+"use client";
+
 import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
+import { showComingSoon } from '@/lib/show-coming-soon';
 
 export default function Hero() {
   return (
@@ -24,10 +27,10 @@ export default function Hero() {
             </div>
             {/* Buttons */}
             <div className="flex w-full flex-col gap-[16px] md:flex-row">
-              <Button variant="primary" size="auto">
+              <Button variant="primary" size="auto" onClick={showComingSoon}>
                 Request a Demo
               </Button>
-              <Button variant="secondary" size="auto">
+              <Button variant="secondary" size="auto" onClick={showComingSoon}>
                 See How It Works
               </Button>
             </div>

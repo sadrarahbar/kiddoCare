@@ -1,5 +1,8 @@
+"use client";
+
 import Image from 'next/image';
 import { Button } from "@/app/components/ui/button";
+import { showComingSoon } from "@/lib/show-coming-soon";
 
 export default function HealthEcosystemChallenges() {
   const iconsPath = "icons/healthEcosystem";
@@ -122,7 +125,7 @@ export default function HealthEcosystemChallenges() {
             <p className="w-full md:w-auto md:flex-1 text-[24px] font-semibold leading-[36px] text-[#0b283b]">
               We are solving these challenges, building the foundation for connected, child-centered care.
             </p>
-            <Button size="auto" 
+            <Button size="auto" onClick={showComingSoon}
               className="
                 relative rounded-[16px] h-[60px] px-[32px] py-[20px] w-full md:w-auto
                 flex items-center justify-center gap-[12px]

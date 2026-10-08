@@ -4,6 +4,12 @@
 
 @import 'tw-animate-css';
 
+@layer base {
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
 @layer components {
   .container-custom {
     --container-gutter-x: 1.5rem;

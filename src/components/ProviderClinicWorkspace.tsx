@@ -1,5 +1,8 @@
+"use client";
+
 import Image from 'next/image';
 import { Button } from "@/app/components/ui/button";
+import { showComingSoon } from "@/lib/show-coming-soon";
 
 export default function ProviderClinicWorkspace() {
   const features = [
@@ -58,7 +61,7 @@ export default function ProviderClinicWorkspace() {
                   </li>
                 ))}
               </ul>
-              <Button variant="primary" size="auto" className="w-full py-[16px]">
+              <Button variant="primary" size="auto" className="w-full py-[16px]" onClick={showComingSoon}>
                 Explore Workspace
               </Button>
             </div>

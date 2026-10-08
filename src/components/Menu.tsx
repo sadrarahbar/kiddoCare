@@ -75,14 +75,14 @@ export default function Menu() {
 
           <nav
             aria-label="Mobile navigation"
-            className="mt-10 flex flex-col items-start gap-8 px-5"
+            className="mt-10 flex w-full flex-col gap-8 px-5"
           >
             {menuItems.map((item) => (
               <button
                 key={item.targetId}
                 onClick={() => handleClick(item.targetId)}
                 type="button"
-                className="cursor-pointer border-0 bg-transparent p-0"
+                className="w-full cursor-pointer border-0 bg-transparent p-0 text-left"
               >
                 <span className="whitespace-nowrap text-[22px] font-medium leading-[24px] tracking-[-0.5px] text-white transition-colors hover:text-[#2795dd]">
                   {item.label}

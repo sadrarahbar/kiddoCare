@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "@/app/components/ui/button";
+import { showComingSoon } from "@/lib/show-coming-soon";
 import Image from 'next/image';
 
 export default function FamilyMobileApp() {
@@ -51,7 +54,7 @@ export default function FamilyMobileApp() {
                   </li>
                 ))}
               </ul>
-              <Button variant="primary" size="auto" className="w-full py-[16px]">
+              <Button variant="primary" size="auto" className="w-full py-[16px]" onClick={showComingSoon}>
                 Explore Family App
               </Button>
             </div>

@@ -6,25 +6,25 @@ export default function OurFoundingTeam() {
     {
       name: "Mohsen Sanjari",
       role: "CEO",
-      email: "sanjari@kiddocare.com",
+      email: "sanjari@kiddocare.info",
       imagePath: `${foundersImagesPath}/sanjariImage.png`,
     },
     {
       name: "Ahmad Salehi",
       role: "CTO",
-      email: "salehi@kiddocare.com",
+      email: "salehi@kiddocare.info",
       imagePath: `${foundersImagesPath}/salehiImage.png`,
     },
     {
       name: "Majid Kazemi",
       role: "COO",
-      email: "kazemi@kiddocare.com",
+      email: "kazemi@kiddocare.info",
       imagePath: `${foundersImagesPath}/kazemiImage.png`,
     },
     {
       name: "Ali Sadeghinejad",
       role: "CFO",
-      email: "sadeghinejad@kiddocare.com",
+      email: "sadeghinejad@kiddocare.info",
       imagePath: `${foundersImagesPath}/sadeghinejadImage.png`,
     },
   ];
@@ -59,9 +59,12 @@ export default function OurFoundingTeam() {
               <p className="w-full text-[20px] font-semibold leading-[24px] tracking-[-0.5px] text-[#1a5780]">
                 {member.role}
               </p>
-              <p className="w-full break-words text-[16px] font-normal leading-[24px] tracking-[-0.5px] text-[#1d5f8b]">
+              <a
+                href={`mailto:${member.email}`}
+                className="w-full break-words text-[16px] font-normal leading-[24px] tracking-[-0.5px] text-[#1d5f8b] hover:underline"
+              >
                 {member.email}
-              </p>
+              </a>
             </div>
           ))}
         </div>

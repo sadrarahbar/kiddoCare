@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import { Toaster } from "@/app/components/ui/sonner";
 import "@/styles/index.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kiddocare.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kiddocare.info";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -64,7 +65,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster
+          position="top-right"
+        />
+      </body>
     </html>
   );
 }
