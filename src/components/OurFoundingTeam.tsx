@@ -6,25 +6,25 @@ export default function OurFoundingTeam() {
     {
       name: "Mohsen Sanjari",
       role: "CEO",
-      email: "sanjari@kiddocare.info",
+      email: "sanjari@kiddocare.app",
       imagePath: `${foundersImagesPath}/sanjariImage.png`,
     },
     {
       name: "Ahmad Salehi",
       role: "CTO",
-      email: "salehi@kiddocare.info",
+      email: "salehi@kiddocare.app",
       imagePath: `${foundersImagesPath}/salehiImage.png`,
     },
     {
       name: "Majid Kazemi",
       role: "COO",
-      email: "kazemi@kiddocare.info",
+      email: "kazemi@kiddocare.app",
       imagePath: `${foundersImagesPath}/kazemiImage.png`,
     },
     {
       name: "Ali Sadeghinejad",
       role: "CFO",
-      email: "sadeghinejad@kiddocare.info",
+      email: "sadeghinejad@kiddocare.app",
       imagePath: `${foundersImagesPath}/sadeghinejadImage.png`,
     },
   ];
